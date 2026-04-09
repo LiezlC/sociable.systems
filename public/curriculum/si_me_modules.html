@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sociable.systems | Social Impact & M&E Track</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        sys: {
+                            black: '#0a0a0a',
+                            dark: '#171717',
+                            gray: '#262626',
+                            light: '#e5e5e5',
+                            accent: '#ef4444', 
+                            warn: '#f59e0b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0a0a0a; color: #e5e5e5; }
+        .module-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .module-content.open {
+            max-height: 1000px;
+        }
+        .brutal-border {
+            border: 1px solid #262626;
+            box-shadow: 4px 4px 0px #262626;
+            transition: all 0.2s ease;
+        }
+        .brutal-border:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #ef4444;
+            border-color: #ef4444;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #262626; }
+        ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <nav class="border-b border-sys-gray bg-sys-black sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-mono font-bold text-sm tracking-tighter flex items-center gap-2">
+                <i data-lucide="square-terminal" class="w-5 h-5 text-sys-accent"></i>
+                SOCIABLE.SYSTEMS
+            </div>
+            <div class="hidden md:flex gap-6 font-mono text-xs text-gray-500">
+                <a href="#" title="Coming Soon" class="hover:text-sys-light transition-colors">THE WATCHDOG</a>
+                <a href="#" class="text-sys-light border-b border-sys-accent pb-1">CURRICULUM</a>
+                <a href="#" title="Coming Soon" class="hover:text-sys-light transition-colors">LIBRARY</a>
+                <a href="#" title="Coming Soon" class="hover:text-sys-light transition-colors">ADVISORY</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-16 w-full">
+        
+        <header class="mb-20">
+            <div class="inline-block px-3 py-1 bg-sys-gray text-sys-accent font-mono text-xs font-bold mb-6 border border-sys-accent">
+                TRACK // 04
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Social Impact <br><span class="text-gray-500">& M&E</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-gray-400 max-w-3xl leading-relaxed">
+                For researchers and evaluators who know that a polished output is often hiding a structural failure.
+            </p>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-sm text-gray-300 max-w-3xl border-l-2 border-sys-gray pl-4">
+                <div class="flex items-start gap-2"><i data-lucide="scan-line" class="w-4 h-4 text-sys-accent shrink-0 mt-0.5"></i> Audit your AI-enabled research workflow.</div>
+                <div class="flex items-start gap-2"><i data-lucide="scan-line" class="w-4 h-4 text-sys-accent shrink-0 mt-0.5"></i> Identify where accountability has drifted.</div>
+                <div class="flex items-start gap-2"><i data-lucide="scan-line" class="w-4 h-4 text-sys-accent shrink-0 mt-0.5"></i> Define hard stop-work thresholds.</div>
+                <div class="flex items-start gap-2"><i data-lucide="scan-line" class="w-4 h-4 text-sys-accent shrink-0 mt-0.5"></i> Rewrite procurement & reporting safeguards.</div>
+            </div>
+
+            <div class="mt-10 p-6 border-l-4 border-sys-accent bg-sys-dark">
+                <p class="font-mono text-sm leading-relaxed">
+                    <span class="text-sys-accent font-bold">THE PREMISE:</span> Global development and impact evaluators are rushing to feed qualitative field data, community interviews, and M&E reports into commercial AI. Without an operational governance framework, this doesn't improve insight; it just accelerates the erasure of nuance and outsources moral judgment to a statistical probability engine.
+                </p>
+            </div>
+        </header>
+
+        <section class="mb-20">
+            <h2 class="font-mono text-sm text-gray-500 mb-8 border-b border-sys-gray pb-4">CORE MODULES</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-sys-dark border border-sys-gray rounded-sm group">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleModule('mod1')">
+                        <div class="flex items-center gap-6">
+                            <span class="font-mono text-sys-accent font-bold">M.01</span>
+                            <h3 class="text-xl font-bold group-hover:text-sys-accent transition-colors">The Liability Sponge in Social Research</h3>
+                        </div>
+                        <i data-lucide="plus" class="w-5 h-5 text-gray-500 transition-transform duration-300" id="icon-mod1"></i>
+                    </button>
+                    <div id="mod1" class="module-content bg-sys-black border-t border-sys-gray">
+                        <div class="p-6 md:p-8 lg:px-20 text-gray-300 space-y-6">
+                            <p class="font-mono text-sys-accent font-bold border-b border-sys-gray pb-4">When AI-generated summaries are wrong, junior staff often end up carrying responsibility for outputs they did not actually verify.</p>
+                            <p class="text-lg">Junior researchers and field teams are increasingly using AI to synthesize messy field notes into clean summaries. This module teaches teams how to recognize when they have stopped being analysts and started being "liability sponges"—signing their names to aggregated narratives created by an algorithm.</p>
+                            <div class="bg-sys-dark p-5 border border-sys-gray font-mono text-sm">
+                                <span class="block text-sys-light font-bold mb-2">DELIVERABLE:</span>
+                                A structural audit of your team's current data-processing pipeline to identify where human authority has been quietly replaced by automated consensus. Establishment of localized "Stop Work Authority".
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-sys-dark border border-sys-gray rounded-sm group">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleModule('mod2')">
+                        <div class="flex items-center gap-6">
+                            <span class="font-mono text-sys-accent font-bold">M.02</span>
+                            <h3 class="text-xl font-bold group-hover:text-sys-accent transition-colors">The Victim Register</h3>
+                        </div>
+                        <i data-lucide="plus" class="w-5 h-5 text-gray-500 transition-transform duration-300" id="icon-mod2"></i>
+                    </button>
+                    <div id="mod2" class="module-content bg-sys-black border-t border-sys-gray">
+                        <div class="p-6 md:p-8 lg:px-20 text-gray-300 space-y-6">
+                            <p class="font-mono text-sys-accent font-bold border-b border-sys-gray pb-4">Because commercial AI is trained to be polite and agreeable, it inherently dilutes the severity of community grievances. We map exactly who pays the price for that sanitized data.</p>
+                            <p class="text-lg">Community grievances and social realities are rarely friction-free. This module introduces the "Victim Register" mechanism: training teams to stress-test their own reports by shifting the vantage point to the person downstream who absorbs the cost of the smoothed, sanitized abstraction.</p>
+                            <div class="bg-sys-dark p-5 border border-sys-gray font-mono text-sm">
+                                <span class="block text-sys-light font-bold mb-2">DELIVERABLE:</span>
+                                A framework for establishing "Stop Work Authority" when a model's translation of community pain becomes too abstract to be operational.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-sys-dark border border-sys-gray rounded-sm group">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleModule('mod3')">
+                        <div class="flex items-center gap-6">
+                            <span class="font-mono text-sys-accent font-bold">M.03</span>
+                            <h3 class="text-xl font-bold group-hover:text-sys-accent transition-colors">Contractual Opacity & Procurement</h3>
+                        </div>
+                        <i data-lucide="plus" class="w-5 h-5 text-gray-500 transition-transform duration-300" id="icon-mod3"></i>
+                    </button>
+                    <div id="mod3" class="module-content bg-sys-black border-t border-sys-gray">
+                        <div class="p-6 md:p-8 lg:px-20 text-gray-300 space-y-6">
+                            <p class="font-mono text-sys-accent font-bold border-b border-sys-gray pb-4">If you cannot legally look under the hood of your vendor's algorithm, you are not doing evaluation—you are taking dictation. We rewrite your procurement rules to fix this.</p>
+                            <p class="text-lg">Before you deploy a tool to evaluate a vulnerable population, you must be able to audit how that tool decides what matters. This module covers the "Calvin Convention" for M&E procurement: non-negotiable clauses that guarantee your right to interrogate the model, demand evidence access, and halt processing.</p>
+                            <div class="bg-sys-dark p-5 border border-sys-gray font-mono text-sm">
+                                <span class="block text-sys-light font-bold mb-2">DELIVERABLE:</span>
+                                Vendor Interrogation Scripts designed to break through safety theater and establish who holds the liability when the system gets it wrong.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <h2 class="font-mono text-sm text-gray-500 mb-8 border-b border-sys-gray pb-4">DEPLOYMENT REALITIES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-sys-dark border border-sys-gray p-6">
+                    <h4 class="font-bold text-sys-light mb-2 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-sys-gray"></i> WHO THIS IS FOR</h4>
+                    <p class="text-sm text-gray-400">M&E Directors, ESG Risk Leads, and Field Research Managers overseeing high-stakes qualitative data pipelines.</p>
+                </div>
+                <div class="bg-sys-dark border border-sys-gray p-6">
+                    <h4 class="font-bold text-sys-light mb-2 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-sys-gray"></i> USE CASES</h4>
+                    <p class="text-sm text-gray-400">Processing community resettlement grievances, synthesizing qualitative M&E field notes, and evaluating vendor-supplied data dashboards.</p>
+                </div>
+                <div class="bg-sys-dark border border-sys-gray p-6 border-t-4 border-t-sys-accent">
+                    <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-sys-accent"></i> IMMEDIATE DELIVERABLES</h4>
+                    <p class="text-sm text-gray-300">You leave with a mapped liability audit of your current pipeline, drafted "Stop Work" thresholds for your teams, and the Calvin Convention framework for your next vendor negotiation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="p-8 md:p-12 brutal-border bg-sys-dark relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-5 font-mono text-9xl font-black pointer-events-none">DIAGNOSTIC</div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold mb-2 flex items-center gap-3">
+                        <i data-lucide="activity" class="w-6 h-6 text-sys-warn"></i>
+                        The Pipeline Stress-Test
+                    </h2>
+                    <p class="text-gray-400 mb-8 font-mono text-sm">Warning: Responses are uncomfortably honest.</p>
+
+                    <div id="quiz-container" class="space-y-6">
+                        <div class="bg-sys-black p-6 border border-sys-gray">
+                            <p class="font-bold mb-4">1. An AI agent summarizes 50 hours of qualitative community interviews. A critical nuance regarding water rights is omitted for "brevity". Who holds the liability for the resulting flawed report?</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <button onclick="handleAnswer('q1', 'vendor')" class="text-left p-4 border border-sys-gray hover:border-sys-light transition-colors text-sm">The software vendor / The LLM provider</button>
+                                <button onclick="handleAnswer('q1', 'researcher')" class="text-left p-4 border border-sys-gray hover:border-sys-light transition-colors text-sm">The junior researcher who clicked "Approve"</button>
+                            </div>
+                            <div id="feedback-q1" class="hidden mt-4 p-4 text-sm font-mono border-l-2"></div>
+                        </div>
+
+                        <div class="bg-sys-black p-6 border border-sys-gray">
+                            <p class="font-bold mb-4">2. Your dashboard flags a resettlement grievance as "Resolved". Can you access the exact probabilistic reasoning and training weights that led the model to that classification?</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <button onclick="handleAnswer('q2', 'yes')" class="text-left p-4 border border-sys-gray hover:border-sys-light transition-colors text-sm">Yes, we require full interpretability.</button>
+                                <button onclick="handleAnswer('q2', 'no')" class="text-left p-4 border border-sys-gray hover:border-sys-light transition-colors text-sm">No, the vendor considers that proprietary IP.</button>
+                            </div>
+                            <div id="feedback-q2" class="hidden mt-4 p-4 text-sm font-mono border-l-2"></div>
+                        </div>
+                    </div>
+
+                    <div id="diagnostic-result" class="hidden mt-8 p-8 border border-sys-gray bg-sys-black text-center relative z-20">
+                        <h3 id="result-title" class="text-xl font-bold mb-3 uppercase tracking-wide"></h3>
+                        <p id="result-desc" class="text-gray-300 text-sm mb-8 max-w-2xl mx-auto"></p>
+                        <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                            <a href="mailto:liezlc@gmail.com" class="w-full md:w-auto bg-sys-light text-sys-black px-8 py-4 font-bold font-mono text-sm hover:bg-sys-accent hover:text-white transition-colors">SCHEDULE A PIPELINE AUDIT</a>
+                            <a href="mailto:liezlc@gmail.com?subject=Requesting%20the%20M%26E%20Audit%20Checklist" class="w-full md:w-auto border border-sys-gray text-sys-light px-8 py-4 font-bold font-mono text-sm hover:border-sys-light transition-colors text-center inline-block">GET THE AUDIT CHECKLIST</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center py-12 border-t border-sys-gray">
+            <h2 class="text-3xl font-bold mb-4">Ready to rebuild your pipeline?</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Review your M&E workflow before it fails downstream. Book a session to audit your team's vulnerabilities and embed the Calvin Convention—our framework for audit rights, evidence access, and stop-work authority—into your next procurement cycle.</p>
+            <a href="mailto:liezlc@gmail.com" class="inline-flex items-center gap-2 bg-sys-light text-sys-black px-8 py-4 font-bold font-mono text-sm hover:bg-sys-accent hover:text-white transition-colors">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                SCHEDULE A PIPELINE AUDIT
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="bg-sys-black border-t border-sys-gray py-8 text-center text-xs font-mono text-gray-600">
+        <p>&copy; 2026 Liezl Coetzee · sociable.systems</p>
+        <p class="mt-2">Industrial safety for algorithmic systems.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleModule(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                document.querySelectorAll('.module-content').forEach(el => {
+                    el.classList.remove('open');
+                });
+                document.querySelectorAll('[id^="icon-"]').forEach(el => {
+                    el.style.transform = 'rotate(0deg)';
+                });
+
+                content.classList.add('open');
+                icon.style.transform = 'rotate(45deg)';
+            }
+        }
+
+        let quizState = { q1: null, q2: null };
+
+        function handleAnswer(questionId, answer) {
+            quizState[questionId] = answer;
+            
+            const feedbackEl = document.getElementById('feedback-' + questionId);
+            feedbackEl.classList.remove('hidden', 'border-sys-accent', 'border-sys-light', 'text-sys-accent', 'text-sys-light');
+            
+            if (questionId === 'q1') {
+                if (answer === 'vendor') {
+                    feedbackEl.innerHTML = "<strong>INCORRECT.</strong> Read your Terms of Service. The vendor has explicitly indemnified themselves. The human in the loop is not there to govern the system; they are there to act as the Liability Sponge. You own the harm.";
+                    feedbackEl.classList.add('border-sys-accent', 'text-sys-accent');
+                } else {
+                    feedbackEl.innerHTML = "<strong>CORRECT.</strong> You have identified the Liability Sponge. The operator absorbs the blame for machine speed. Our curriculum teaches you how to structurally grant them the power to say 'No'.";
+                    feedbackEl.classList.add('border-sys-light', 'text-sys-light');
+                }
+            } else if (questionId === 'q2') {
+                if (answer === 'yes') {
+                    feedbackEl.innerHTML = "<strong>EXCELLENT.</strong> You have successfully enacted the Right of Auditability. (Though if you are using a frontier commercial LLM, true interpretability is exceedingly rare. Let's review the opacity clauses in your vendor contract).";
+                    feedbackEl.classList.add('border-sys-light', 'text-sys-light');
+                } else {
+                    feedbackEl.innerHTML = "<strong>CRITICAL FAILURE.</strong> Clarke's Constraint is active: Any sufficiently opaque system will be treated as law. If you cannot interrogate the reasoning, you are not performing M&E. You are taking dictation.";
+                    feedbackEl.classList.add('border-sys-accent', 'text-sys-accent');
+                }
+            }
+
+            evaluateResults();
+        }
+
+        function evaluateResults() {
+            if (quizState.q1 && quizState.q2) {
+                const finalPanel = document.getElementById('diagnostic-result');
+                const title = document.getElementById('result-title');
+                const desc = document.getElementById('result-desc');
+
+                let score = 0;
+                if (quizState.q1 === 'researcher') score++;
+                if (quizState.q2 === 'yes') score++;
+
+                if (score === 0) {
+                    title.innerText = "Severe Exposure: High Vendor Dependence";
+                    title.className = "text-2xl font-bold text-sys-accent mb-3 uppercase tracking-wide";
+                    desc.innerText = "Your human operators are functioning as liability sponges without the authority to govern. Procurement opacity is an active institutional risk. You need immediate contractual safeguards.";
+                } else if (score === 1) {
+                    title.innerText = "Moderate Exposure: Partial Visibility";
+                    title.className = "text-2xl font-bold text-sys-warn mb-3 uppercase tracking-wide";
+                    desc.innerText = "You have identified some risks, but structural accountability gaps remain. Human sign-off is currently happening without full forensic authority to halt the pipeline.";
+                } else {
+                    title.innerText = "Rare Baseline: Principles Established";
+                    title.className = "text-2xl font-bold text-sys-light mb-3 uppercase tracking-wide";
+                    desc.innerText = "You have established the correct accountability principles. The next step is stress-testing these mechanisms in live production environments with your field teams.";
+                }
+
+                setTimeout(() => {
+                    finalPanel.classList.remove('hidden');
+                    finalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>

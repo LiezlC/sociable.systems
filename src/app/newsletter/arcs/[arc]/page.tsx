@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { Page, PageHeader } from "@/components/Page";
 import { arcs, sonicCycles } from "@/data/site";
 import { episodesByArc } from "@/data/episodes";
+import { arcResources } from "@/data/arcResources";
+import { getConsolidation } from "@/lib/consolidations";
 
 export function generateStaticParams() {
   return arcs.map((a) => ({ arc: a.slug }));
@@ -18,6 +20,8 @@ export default function ArcPage({ params }: { params: { arc: string } }) {
   if (!arc) notFound();
   const cycle = sonicCycles.find((c) => c.linkedArc === arc.slug);
   const arcEpisodes = episodesByArc(arc.slug);
+  const resources = arcResources[arc.slug] ?? [];
+  const consolidation = getConsolidation(arc.slug);
 
   return (
     <Page>
@@ -31,6 +35,34 @@ export default function ArcPage({ params }: { params: { arc: string } }) {
           </Link>
           <div className="text-steel">{cycle.blurb}</div>
         </div>
+      )}
+
+      {consolidation && (
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl mb-4">Arc consolidation</h2>
+          <article
+            className="prose prose-ink max-w-none font-serif text-ink/90 leading-relaxed
+              prose-headings:font-serif prose-a:text-ink prose-a:underline prose-a:underline-offset-4
+              prose-blockquote:border-l-steel/40 prose-blockquote:text-steel"
+            dangerouslySetInnerHTML={{ __html: consolidation.html }}
+          />
+        </section>
+      )}
+
+      {resources.length > 0 && (
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl mb-4">Companion artifacts</h2>
+          <ul className="space-y-2">
+            {resources.map((r) => (
+              <li key={r.href}>
+                <a href={r.href} className="underline underline-offset-4" target="_blank" rel="noopener">
+                  {r.title}
+                </a>
+                <span className="ml-2 font-mono text-xs text-steel">[{r.kind}]</span>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <h2 className="font-serif text-2xl mt-8 mb-4">
