@@ -9,7 +9,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-const ARTICLES_DIR = path.join(process.cwd(), "src", "data", "_incoming", "articles");
+const ARTICLES_DIR = path.join(process.cwd(), "src", "data", "articles");
 
 export type Article = {
   episode: number;

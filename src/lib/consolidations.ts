@@ -5,7 +5,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-const DIR = path.join(process.cwd(), "src", "data", "_incoming", "articles");
+const DIR = path.join(process.cwd(), "src", "data", "articles");
 
 // Filename arc key → arc slug in site.ts
 const KEY_TO_SLUG: Record<string, string> = {
