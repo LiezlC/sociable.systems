@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sociable.systems | Artifacts — preliminary curriculum archive</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #11111a;
+    --surface-2: #161622;
+    --border: #24243a;
+    --text: #e8e8f0;
+    --muted: #8a8aa0;
+    --accent: #7dd3fc;
+    --accent-2: #f0abfc;
+    --warn: #fcd34d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(ellipse at top, #14142a 0%, var(--bg) 60%);
+    color: var(--text);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+  header { margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+  .eyebrow {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0 0 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .lede { font-size: 1.1rem; color: var(--muted); max-width: 65ch; }
+  .notice {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(252, 211, 77, 0.08);
+    border-left: 3px solid var(--warn);
+    font-size: 0.9rem;
+    color: #fde68a;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin: 3rem 0 0.5rem;
+    color: var(--text);
+  }
+  h2 .count {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: normal;
+    margin-left: 0.75rem;
+  }
+  .section-blurb { color: var(--muted); margin: 0 0 1.25rem; font-size: 0.95rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+  .card {
+    display: block;
+    padding: 1rem 1.15rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.15s ease;
+  }
+  .card:hover {
+    background: var(--surface-2);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .card .title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+  .card .meta {
+    font-family: ui-monospace, monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    word-break: break-all;
+  }
+  .primary {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(125, 211, 252, 0.08), rgba(240, 171, 252, 0.08));
+  }
+  .primary .title::before { content: "★ "; color: var(--accent); }
+  footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--accent); }
+  audio { width: 100%; margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Preliminary archive</div>
+  <h1>Artifacts</h1>
+  <p class="lede">Standalone training materials and framework pages ported from the khayali-xyz archive while the main curriculum section is under construction. Each gem is a self-contained single-file HTML — open in a new tab, expect its own styling, not yet integrated with the broader site navigation.</p>
+  <div class="notice">This is a staging ground, not a finished section. Files will migrate into properly themed track pages as curriculum decisions are finalized. Share URLs directly for now.</div>
+</header>
+
+<section>
+  <h2>Social Impact &amp; M&amp;E Track <span class="count">3 items</span></h2>
+  <p class="section-blurb">Track 04. Industrial Safety for Algorithmic Systems in the social impact and M&amp;E context. Intended for the upcoming advisory meeting.</p>
+  <div class="grid">
+    <a class="card primary" href="./si-me.html"><span class="title">Social Impact &amp; M&amp;E Track — Modules Landing</span><span class="meta">si-me.html</span></a>
+    <a class="card primary" href="./isas.html"><span class="title">ISAS — Sociable Systems Architecture infographic</span><span class="meta">isas.html</span></a>
+  </div>
+  <div style="margin-top:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+    <div style="font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">Stop Being an AI Liability Sponge</div>
+    <div style="font-family:ui-monospace,monospace;font-size:0.7rem;color:var(--muted);margin-bottom:0.5rem;">audio · stop-being-a-liability-sponge.mp3</div>
+    <audio controls preload="none" src="./stop-being-a-liability-sponge.mp3"></audio>
+  </div>
+</section>
+
+<section>
+  <h2>AI-ESG Curriculum <span class="count">curriculum/</span></h2>
+  <p class="section-blurb">Full AI-ESG track: Levels 0–6, syllabus variants, facilitator deployment matrix, capstone audit defense, and companion artifacts. <a href="./curriculum/index.html" style="color:var(--accent);">Open curriculum index →</a></p>
+  <div class="grid">
+    <a class="card primary" href="./curriculum/index.html"><span class="title">Curriculum Index</span><span class="meta">curriculum/index.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Syllabus_Executive_Overview.html"><span class="title">Syllabus — Executive Overview</span><span class="meta">AI-ESG_Syllabus_Executive_Overview.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Syllabus_Overview.html"><span class="title">Syllabus — Full Overview</span><span class="meta">AI-ESG_Syllabus_Overview.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Syllabus_K2_Z47.html"><span class="title">Syllabus — K2/Z47 variant</span><span class="meta">AI-ESG_Syllabus_K2_Z47.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level0_Constitutional_Foundations.html"><span class="title">Level 0 — Constitutional Foundations</span><span class="meta">AI-ESG_Level0_Constitutional_Foundations.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level0.5_Framing_the_Relationship.html"><span class="title">Level 0.5 — Framing the Relationship</span><span class="meta">AI-ESG_Level0.5_Framing_the_Relationship.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level1_Epistemic_Failures.html"><span class="title">Level 1 — Epistemic Failures</span><span class="meta">AI-ESG_Level1_Epistemic_Failures.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level2_Architecture_Compliance.html"><span class="title">Level 2 — Architecture &amp; Compliance</span><span class="meta">AI-ESG_Level2_Architecture_Compliance.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level3_Lucas_Cycle.html"><span class="title">Level 3 — Lucas Cycle</span><span class="meta">AI-ESG_Level3_Lucas_Cycle.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level4_Pullman_Cycle.html"><span class="title">Level 4 — Pullman Cycle</span><span class="meta">AI-ESG_Level4_Pullman_Cycle.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level5_Kubrick_Cycle.html"><span class="title">Level 5 — Kubrick Cycle</span><span class="meta">AI-ESG_Level5_Kubrick_Cycle.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Level6_Forensic_Domains.html"><span class="title">Level 6 — Forensic Domains</span><span class="meta">AI-ESG_Level6_Forensic_Domains.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Module_H8P_Continuous_Governance.html"><span class="title">Module — H∞P Continuous Governance</span><span class="meta">AI-ESG_Module_H8P_Continuous_Governance.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Capstone_Audit_Defense.html"><span class="title">Capstone — Audit Defense</span><span class="meta">AI-ESG_Capstone_Audit_Defense.html</span></a>
+    <a class="card" href="./curriculum/AI-ESG_Facilitator_Deployment_Matrix.html"><span class="title">Facilitator Deployment Matrix</span><span class="meta">AI-ESG_Facilitator_Deployment_Matrix.html</span></a>
+    <a class="card" href="./curriculum/Partnership_Skills_Framework.html"><span class="title">Partnership Skills Framework</span><span class="meta">Partnership_Skills_Framework.html</span></a>
+    <a class="card" href="./curriculum/Partnership_Challenge_Engine.html"><span class="title">Partnership Challenge Engine</span><span class="meta">Partnership_Challenge_Engine.html</span></a>
+    <a class="card" href="./curriculum/Sci-Fi_Governance_Rosetta_Stone.html"><span class="title">Sci-Fi Governance Rosetta Stone</span><span class="meta">Sci-Fi_Governance_Rosetta_Stone.html</span></a>
+    <a class="card" href="./curriculum/AEIS_Challenge_Engine_Config_Hub.html"><span class="title">AEIS Challenge Engine — Config Hub</span><span class="meta">AEIS_Challenge_Engine_Config_Hub.html</span></a>
+    <a class="card" href="./curriculum/AI_Ensemble.html"><span class="title">AI Ensemble</span><span class="meta">AI_Ensemble.html</span></a>
+    <a class="card" href="./curriculum/Artifacts_Index.html"><span class="title">Artifacts Index</span><span class="meta">Artifacts_Index.html</span></a>
+    <a class="card" href="./curriculum/VibeCodeChallenger.html"><span class="title">VibeCode Challenger</span><span class="meta">VibeCodeChallenger.html</span></a>
+    <a class="card" href="./curriculum/humanhoop.html"><span class="title">Human H∞P</span><span class="meta">humanhoop.html</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>JustDev Framework <span class="count">justdev/</span></h2>
+  <p class="section-blurb">The AI-vs-IFC thesis suite. Agent, ClearBox, AuditTrailFeed, IFC2026 comparison, JustDev Metrics, ModularExpansion.</p>
+  <div class="grid">
+    <a class="card primary" href="./justdev/index.html"><span class="title">JustDev — Index</span><span class="meta">justdev/index.html</span></a>
+    <a class="card" href="./justdev/index-enhanced.html"><span class="title">JustDev — Enhanced Index</span><span class="meta">justdev/index-enhanced.html</span></a>
+    <a class="card" href="./justdev/Kimi2-JustDev-Agent.html"><span class="title">JustDev Agent</span><span class="meta">Kimi2-JustDev-Agent.html</span></a>
+    <a class="card" href="./justdev/Kimi2-JustDev-AgentClear.html"><span class="title">JustDev Agent (Clear)</span><span class="meta">Kimi2-JustDev-AgentClear.html</span></a>
+    <a class="card" href="./justdev/Kimi2-JustDev-ClearBox.html"><span class="title">JustDev ClearBox</span><span class="meta">Kimi2-JustDev-ClearBox.html</span></a>
+    <a class="card" href="./justdev/Kimi2-JustDev-AuditTrailFeed.html"><span class="title">JustDev Audit Trail Feed</span><span class="meta">Kimi2-JustDev-AuditTrailFeed.html</span></a>
+    <a class="card" href="./justdev/Kimi2-JustDev-IFC2026.html"><span class="title">JustDev vs IFC 2026</span><span class="meta">Kimi2-JustDev-IFC2026.html</span></a>
+    <a class="card" href="./justdev/Kimi2-JustDev-ModularExpansion.html"><span class="title">JustDev Modular Expansion</span><span class="meta">Kimi2-JustDev-ModularExpansion.html</span></a>
+    <a class="card" href="./justdev/Kimi2-JiustDevMetrics.html"><span class="title">JustDev Metrics</span><span class="meta">Kimi2-JiustDevMetrics.html</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>AI Augmentation — Model Voices <span class="count">ai-augmentation/</span></h2>
+  <p class="section-blurb">Parallel treatments of the "upgrade don't replace" argument by multiple models. Useful as a comparative reading set.</p>
+  <div class="grid">
+    <a class="card" href="./ai-augmentation/ai-augmentation-comprehensive.html"><span class="title">Comprehensive Overview</span><span class="meta">ai-augmentation-comprehensive.html</span></a>
+    <a class="card" href="./ai-augmentation/claudeopus_ai-augmentation-vision.html"><span class="title">Claude Opus — Augmentation Vision</span><span class="meta">claudeopus_ai-augmentation-vision.html</span></a>
+    <a class="card" href="./ai-augmentation/claudesonnet-ai_amplification_concept.html"><span class="title">Claude Sonnet — Amplification Concept</span><span class="meta">claudesonnet-ai_amplification_concept.html</span></a>
+    <a class="card" href="./ai-augmentation/Opus4.html"><span class="title">Opus 4</span><span class="meta">Opus4.html</span></a>
+    <a class="card" href="./ai-augmentation/Opus41_amplification-campaign.html"><span class="title">Opus 4.1 — Amplification Campaign</span><span class="meta">Opus41_amplification-campaign.html</span></a>
+    <a class="card" href="./ai-augmentation/Gemini-amplifierforhumanity.html"><span class="title">Gemini — Amplifier for Humanity</span><span class="meta">Gemini-amplifierforhumanity.html</span></a>
+    <a class="card" href="./ai-augmentation/GPT4o_ai_redeployment_webpage.html"><span class="title">GPT-4o — Redeployment</span><span class="meta">GPT4o_ai_redeployment_webpage.html</span></a>
+    <a class="card" href="./ai-augmentation/GPT5_redeploy_replace_interactive_concept_webpage.html"><span class="title">GPT-5 — Redeploy, Don't Replace</span><span class="meta">GPT5_redeploy_replace_interactive_concept_webpage.html</span></a>
+    <a class="card" href="./ai-augmentation/grok-AIrenaissance.html"><span class="title">Grok — AI Renaissance</span><span class="meta">grok-AIrenaissance.html</span></a>
+    <a class="card" href="./ai-augmentation/perplexity_ai_empowerment_single_file.html"><span class="title">Perplexity — AI Empowerment</span><span class="meta">perplexity_ai_empowerment_single_file.html</span></a>
+    <a class="card" href="./ai-augmentation/Qwen-upgradenotreplace.html"><span class="title">Qwen — Upgrade, Not Replace</span><span class="meta">Qwen-upgradenotreplace.html</span></a>
+    <a class="card" href="./ai-augmentation/Z-ai-augmentation.html"><span class="title">Z — AI Augmentation</span><span class="meta">Z-ai-augmentation.html</span></a>
+    <a class="card" href="./ai-augmentation/minimax_ai_transformation_narrative.html"><span class="title">MiniMax — Transformation Narrative</span><span class="meta">minimax_ai_transformation_narrative.html</span></a>
+    <a class="card" href="./ai-augmentation/genspark_elevation-manifesto-interactive.html"><span class="title">GenSpark — Elevation Manifesto</span><span class="meta">genspark_elevation-manifesto-interactive.html</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>Standalone <span class="count">misc</span></h2>
+  <div class="grid">
+    <a class="card" href="./esg-landscape.html"><span class="title">The Evolving Landscape of AI in ESG</span><span class="meta">esg-landscape.html</span></a>
+    <a class="card" href="./comparative_analysis.html"><span class="title">Comparative Analysis</span><span class="meta">comparative_analysis.html</span></a>
+    <a class="card" href="./asimov-emergence-vision.html"><span class="title">The Emergence Protocol: Beyond Control</span><span class="meta">asimov-emergence-vision.html</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>Flagship sections — promoted out of the archive</h2>
+  <p class="section-blurb">These used to live under /artifacts but are now first-class top-level destinations:</p>
+  <div class="grid">
+    <a class="card primary" href="/grievoice/"><span class="title">→ GrieVoice</span><span class="meta">/grievoice/</span></a>
+    <a class="card primary" href="/datadragons/"><span class="title">→ Data Dragons</span><span class="meta">/datadragons/</span></a>
+  </div>
+</section>
+
+<footer>
+  <p>← <a href="/">sociable.systems</a> · Preliminary archive. Everything here will eventually migrate into properly themed, navigable sections of the main site. For now, share direct URLs.</p>
+</footer>
+
+</div>
+</body>
+</html>

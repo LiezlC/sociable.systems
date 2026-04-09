@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khayali | Sociable Systems Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        sys: {
+                            black: '#0a0a0a',
+                            dark: '#171717',
+                            gray: '#262626',
+                            light: '#e5e5e5',
+                            accent: '#ef4444',
+                            warn: '#f59e0b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0a0a0a; color: #e5e5e5; }
+        .brutal-border {
+            border: 1px solid #262626;
+            box-shadow: 4px 4px 0px #262626;
+            transition: all 0.2s ease;
+        }
+        .brutal-border:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #ef4444;
+            border-color: #ef4444;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #262626; }
+        ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-sans">
+
+    <nav class="border-b border-sys-gray bg-sys-black sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-mono font-bold text-sm tracking-tighter flex items-center gap-2 text-sys-accent">
+                <span class="text-xl">&#9632;</span> KHAYALI [SOCIABLE.SYSTEMS]
+            </div>
+            <div class="hidden md:flex gap-6 font-mono text-xs text-gray-400">
+                <span class="text-sys-light border-b border-sys-accent pb-1">THREAT LANDSCAPE</span>
+                <span class="hover:text-sys-light transition-colors">OPERATIONAL MECHANICS</span>
+                <span class="hover:text-sys-light transition-colors">ACCOUNTABILITY</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-16 w-full grid grid-cols-1 gap-12">
+        
+        <header class="mb-10 text-center md:text-left border-b border-sys-gray pb-12">
+            <div class="inline-block px-3 py-1 bg-sys-gray text-sys-accent font-mono text-xs font-bold mb-6 border border-sys-accent">
+                INTELLIGENCE BRIEFING
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight uppercase">
+                Industrial Safety <br><span class="text-gray-500">For Algorithmic Systems</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-gray-400 max-w-4xl leading-relaxed">
+                We do not build AI alignment. We build the architecture of refusal. When algorithmic safety theater fails in the physical world, Khayali provides the forensic mechanics to assign liability where it belongs.
+            </p>
+        </header>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 order-2 lg:order-1">
+                <h2 class="text-3xl font-bold border-l-4 border-sys-accent pl-4">Weaponized Artifacts</h2>
+                <p class="text-lg text-gray-400">
+                    The Khayali portfolio is not academic theory. It consists of contract-ready frameworks and digital tools designed to intercept algorithmic harm before it reaches vulnerable populations. The ecosystem is built to break through vendor opacity and empower human operators with explicit "Stop Work Authority."
+                </p>
+                <ul class="font-mono text-sm space-y-4 mt-6">
+                    <li class="flex items-start gap-3">
+                        <span class="text-sys-accent text-lg">&#9656;</span>
+                        <div><strong class="text-sys-light">GrieVoice Agents:</strong> Multilingual voice architecture for project-affected community grievance systems.</div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-sys-accent text-lg">&#9656;</span>
+                        <div><strong class="text-sys-light">The Calvin Convention:</strong> Six contract-ready mechanisms empowering human refusal without incurring liability.</div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-sys-accent text-lg">&#9656;</span>
+                        <div><strong class="text-sys-light">Safety Counter-Narrative:</strong> Dashboards tracking real-world physical impacts against corporate safety claims.</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="brutal-border bg-sys-dark p-6 order-1 lg:order-2">
+                <h3 class="font-mono text-xs text-gray-500 mb-4 text-center">CORE PORTFOLIO DISTRIBUTION</h3>
+                <div class="chart-container">
+                    <canvas id="portfolioChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-12">
+            <div class="brutal-border bg-sys-dark p-6">
+                <h3 class="font-mono text-xs text-gray-500 mb-4 text-center">HIGH-STAKES SECTOR PENETRATION (RISK EXPOSURE)</h3>
+                <div class="chart-container">
+                    <canvas id="sectorChart"></canvas>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold border-l-4 border-sys-warn pl-4">High-Stakes Environments</h2>
+                <p class="text-lg text-gray-400">
+                    Our focus is restricted to sectors where digital failures trigger physical, financial, or human consequences. We operate where automated decision-making intersects with human vulnerability, evaluating systems not on their code efficiency, but on their real-world fallout.
+                </p>
+                <div class="bg-sys-black border border-sys-gray p-5 font-mono text-sm text-gray-300">
+                    <p class="mb-2"><span class="text-sys-warn font-bold">CRITICAL EXPOSURE IDENTIFIED:</span></p>
+                    <p>Extractive industries and global development finance currently exhibit the highest operational risk regarding unverified AI deployment. The rush to automate ESG reporting and grievance processing is actively eroding contextual nuance in field data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16 border-t border-sys-gray pt-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Safety Theater vs. Ground Truth</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    A forensic comparison of standard corporate AI deployment protocols against the Sociable Systems Architecture of Refusal.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto brutal-border bg-sys-dark p-8">
+                <div class="chart-container" style="height: 500px;">
+                    <canvas id="radarChart"></canvas>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 font-mono text-sm">
+                    <div class="p-4 border border-sys-gray">
+                        <h4 class="text-gray-500 font-bold mb-2 uppercase">Standard Deployment</h4>
+                        <p class="text-gray-400">Prioritizes vendor indemnity and semantic smoothing. The human operator is stripped of contextual agency and functions merely as a liability sponge for automated output.</p>
+                    </div>
+                    <div class="p-4 border border-sys-accent bg-sys-black">
+                        <h4 class="text-sys-accent font-bold mb-2 uppercase">Sociable Systems Architecture</h4>
+                        <p class="text-gray-300">Prioritizes operator agency and auditable truth. Systems are structured to require active human judgment, placing legal and ethical liability squarely on the opaque system.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16 border-t border-sys-gray pt-16">
+            <h2 class="text-3xl font-bold mb-8 text-center">The Liability Sponge Mechanics</h2>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12 text-lg">
+                How structural harm is laundered through human operators, and how the Calvin Convention intercepts the flow of liability.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                
+                <div class="bg-sys-dark p-8 border border-sys-gray flex flex-col items-center text-center">
+                    <h3 class="font-mono text-sys-warn font-bold mb-6 text-xl">THE BROKEN PIPELINE</h3>
+                    
+                    <div class="w-full max-w-xs border-2 border-sys-gray bg-sys-black p-4 mb-2">
+                        <span class="block text-xs text-gray-500 font-mono mb-1">DATA INGESTION</span>
+                        <strong class="text-sys-light">Raw Community Grievances</strong>
+                    </div>
+                    <div class="text-3xl text-sys-gray my-2">&#8595;</div>
+                    
+                    <div class="w-full max-w-xs border-2 border-sys-gray bg-sys-black p-4 mb-2 relative">
+                        <span class="block text-xs text-gray-500 font-mono mb-1">BLACK BOX PROCESSING</span>
+                        <strong class="text-sys-light">Opaque Vendor AI</strong>
+                        <div class="absolute -right-4 top-1/2 transform -translate-y-1/2 text-sys-accent font-bold text-sm bg-sys-dark px-2 py-1 border border-sys-accent">
+                            SMOOTHING
+                        </div>
+                    </div>
+                    <div class="text-3xl text-sys-accent my-2">&#8595;</div>
+                    
+                    <div class="w-full max-w-xs border-2 border-sys-accent bg-[#2a0808] p-4 mb-2 shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                        <span class="block text-xs text-sys-accent font-mono mb-1">THE VULNERABILITY</span>
+                        <strong class="text-white text-lg">Human "Liability Sponge"</strong>
+                        <p class="text-xs text-gray-300 mt-2 font-mono">Operator forced to approve unverified, synthesized data.</p>
+                    </div>
+                    <div class="text-3xl text-sys-accent my-2">&#8595;</div>
+                    
+                    <div class="w-full max-w-xs border-2 border-sys-gray bg-sys-black p-4">
+                        <span class="block text-xs text-gray-500 font-mono mb-1">OUTCOME</span>
+                        <strong class="text-sys-light">Institutional Harm</strong>
+                    </div>
+                </div>
+
+                <div class="bg-sys-dark p-8 border border-sys-accent flex flex-col items-center text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiMzMzMiLz48L3N2Zz4=')] opacity-20"></div>
+                    
+                    <h3 class="font-mono text-sys-accent font-bold mb-6 text-xl relative z-10">THE ARCHITECTURE OF REFUSAL</h3>
+                    
+                    <div class="w-full max-w-xs border-2 border-sys-gray bg-sys-black p-4 mb-2 relative z-10">
+                        <span class="block text-xs text-gray-500 font-mono mb-1">DATA INGESTION</span>
+                        <strong class="text-sys-light">Raw Community Grievances</strong>
+                    </div>
+                    <div class="text-3xl text-sys-gray my-2 relative z-10">&#8595;</div>
+                    
+                    <div class="w-full max-w-xs border-2 border-sys-gray bg-sys-black p-4 mb-2 relative z-10">
+                        <span class="block text-xs text-gray-500 font-mono mb-1">INTERROGATION LAYER</span>
+                        <strong class="text-sys-light">Vendor AI</strong>
+                    </div>
+                    <div class="text-3xl text-sys-light my-2 relative z-10">&#8595;</div>
+                    
+                    <div class="w-full max-w-xs border-2 border-sys-light bg-sys-black p-4 mb-2 relative z-10 shadow-[0_0_15px_rgba(229,229,229,0.2)]">
+                        <span class="block text-xs text-sys-light font-mono mb-1">CALVIN CONVENTION ACTIVE</span>
+                        <strong class="text-white text-lg">Human Operator</strong>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Exercising Stop Work Authority. Refusing unverified abstraction.</p>
+                    </div>
+                    
+                    <div class="flex justify-center w-full max-w-xs relative z-10 mt-2">
+                        <div class="w-1/2 flex flex-col items-center border-r border-sys-gray pr-2">
+                             <div class="text-2xl text-sys-accent mb-1">&#8617;</div>
+                             <span class="text-[10px] font-mono text-sys-accent">LIABILITY RETURNED TO SYSTEM</span>
+                        </div>
+                        <div class="w-1/2 flex flex-col items-center pl-2">
+                             <div class="text-2xl text-sys-light mb-1">&#8595;</div>
+                             <span class="text-[10px] font-mono text-gray-400">VERIFIED ESCALATION</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-sys-black border-t border-sys-gray py-12 text-center mt-12">
+        <div class="font-mono font-bold text-lg tracking-tighter text-sys-accent mb-4">
+            <span class="text-xl">&#9632;</span> SOCIABLE.SYSTEMS
+        </div>
+        <p class="text-sm font-mono text-gray-500 max-w-xl mx-auto">
+            Intellectually rigorous. Uncomfortably honest. <br>
+            Protecting the humans in the loop from the velocity of the machine.
+        </p>
+    </footer>
+
+    <script>
+        function wrapText(text) {
+            const words = text.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > 16) {
+                    if (currentLine.length > 0) lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            });
+            if (currentLine.length > 0) lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        Chart.defaults.color = '#a3a3a3';
+        Chart.defaults.font.family = 'JetBrains Mono, monospace';
+        
+        const portfolioLabels = [
+            "AI-ESG Curriculum",
+            "GrieVoice Agents",
+            "The Calvin Convention",
+            "Safety Counter-Narrative",
+            "Operational Toolkits"
+        ].map(wrapText);
+
+        const ctxPortfolio = document.getElementById('portfolioChart').getContext('2d');
+        new Chart(ctxPortfolio, {
+            type: 'doughnut',
+            data: {
+                labels: portfolioLabels,
+                datasets: [{
+                    data: [25, 20, 25, 15, 15],
+                    backgroundColor: [
+                        '#ef4444',
+                        '#f59e0b',
+                        '#e5e5e5',
+                        '#262626',
+                        '#404040'
+                    ],
+                    borderColor: '#171717',
+                    borderWidth: 2,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { color: '#e5e5e5', font: { size: 11 } } },
+                    tooltip: commonTooltipConfig
+                },
+                layout: { padding: 10 }
+            }
+        });
+
+        const sectorLabels = [
+            "Extractive & Mining Operations",
+            "Global Development Finance",
+            "Corporate ESG & Boards",
+            "Labor Unions & Advocacy"
+        ].map(wrapText);
+
+        const ctxSector = document.getElementById('sectorChart').getContext('2d');
+        new Chart(ctxSector, {
+            type: 'bar',
+            data: {
+                labels: sectorLabels,
+                datasets: [{
+                    label: 'Algorithmic Risk Exposure Index',
+                    data: [95, 88, 72, 85],
+                    backgroundColor: '#ef4444',
+                    borderColor: '#ef4444',
+                    borderWidth: 1,
+                    barThickness: 30
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: '#262626' },
+                        ticks: { color: '#a3a3a3' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#e5e5e5', font: { size: 11 } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        const radarLabels = [
+            "Operator Agency",
+            "Liability Placement",
+            "System Transparency",
+            "Harm Mitigation",
+            "Contextual Awareness"
+        ].map(wrapText);
+
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: radarLabels,
+                datasets: [
+                    {
+                        label: 'Standard Corporate AI',
+                        data: [20, 90, 15, 30, 25],
+                        backgroundColor: 'rgba(38, 38, 38, 0.4)',
+                        borderColor: '#525252',
+                        pointBackgroundColor: '#525252',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Sociable Systems Architecture',
+                        data: [95, 10, 85, 90, 80],
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        borderColor: '#ef4444',
+                        pointBackgroundColor: '#ef4444',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#262626' },
+                        grid: { color: '#262626' },
+                        pointLabels: { color: '#e5e5e5', font: { size: 11 } },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#e5e5e5' } },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+    </script>
+</body>
+</html>

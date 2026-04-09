@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Dragons | sociable.systems</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #11111a;
+    --surface-2: #161622;
+    --border: #2a1f3a;
+    --text: #e8e8f0;
+    --muted: #8a8aa0;
+    --accent: #f0abfc;
+    --accent-2: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(ellipse at top, #2a1440 0%, var(--bg) 60%);
+    color: var(--text);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+  header { margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+  .eyebrow {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0 0 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .lede { font-size: 1.1rem; color: var(--muted); max-width: 65ch; }
+  h2 {
+    font-size: 1.5rem;
+    margin: 3rem 0 0.5rem;
+    color: var(--text);
+  }
+  .section-blurb { color: var(--muted); margin: 0 0 1.25rem; font-size: 0.95rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+  .card {
+    display: block;
+    padding: 1rem 1.15rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.15s ease;
+  }
+  .card:hover {
+    background: var(--surface-2);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .card .title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+  .card .meta {
+    font-family: ui-monospace, monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    word-break: break-all;
+  }
+  .primary {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(240, 171, 252, 0.08), rgba(251, 191, 36, 0.08));
+  }
+  .primary .title::before { content: "★ "; color: var(--accent); }
+  footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Data Dragons</div>
+  <h1>Data Dragons</h1>
+  <p class="lede">Taming guides, realm maps, slayer quests, and primers. Companion materials to the DataDragons newsletter cycle. When the serpent learns to dance and the nulls rebel.</p>
+</header>
+
+<section>
+  <h2>Interactive guides</h2>
+  <p class="section-blurb">Start here. Self-contained HTML — open in a new tab.</p>
+  <div class="grid">
+    <a class="card primary" href="./DataDragonTaming101.html"><span class="title">Data Dragon Taming 101</span><span class="meta">DataDragonTaming101.html</span></a>
+    <a class="card" href="./dd101.html"><span class="title">DD101</span><span class="meta">dd101.html</span></a>
+    <a class="card" href="./data-dragon-realms-complete.html"><span class="title">Data Dragon Realms — Complete</span><span class="meta">data-dragon-realms-complete.html</span></a>
+    <a class="card" href="./data-dragon-slayer-complete.html"><span class="title">Data Dragon Slayer — Complete</span><span class="meta">data-dragon-slayer-complete.html</span></a>
+    <a class="card" href="./DataDragonSlayerQuest.html"><span class="title">Data Dragon Slayer Quest</span><span class="meta">DataDragonSlayerQuest.html</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>Primers &amp; briefings <span style="font-family:ui-monospace,monospace;font-size:0.75rem;color:var(--muted);font-weight:normal;">PDF</span></h2>
+  <p class="section-blurb">Downloadable briefing documents.</p>
+  <div class="grid">
+    <a class="card" href="./Data%20Dragon%20ID%20Kit.pdf"><span class="title">Data Dragon ID Kit</span><span class="meta">Data Dragon ID Kit.pdf</span></a>
+    <a class="card" href="./DragonDataIntro.pdf"><span class="title">Dragon Data Intro</span><span class="meta">DragonDataIntro.pdf</span></a>
+    <a class="card" href="./Foundation_DataDecay.pdf"><span class="title">Foundation — Data Decay</span><span class="meta">Foundation_DataDecay.pdf</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>The bestiary <span style="font-family:ui-monospace,monospace;font-size:0.75rem;color:var(--muted);font-weight:normal;">individual dragon profiles · PDF</span></h2>
+  <p class="section-blurb">Named specimens from the field.</p>
+  <div class="grid">
+    <a class="card" href="./2head_Batch%20Compress.pdf"><span class="title">Two-Headed Dragon</span><span class="meta">2head.pdf</span></a>
+    <a class="card" href="./chimwemwe_Batch%20Compress.pdf"><span class="title">Chimwemwe</span><span class="meta">chimwemwe.pdf</span></a>
+    <a class="card" href="./leo_Batch%20Compress.pdf"><span class="title">Leo</span><span class="meta">leo.pdf</span></a>
+    <a class="card" href="./noela_Batch%20Compress.pdf"><span class="title">Noela</span><span class="meta">noela.pdf</span></a>
+    <a class="card" href="./pixel_Batch%20Compress.pdf"><span class="title">Pixel</span><span class="meta">pixel.pdf</span></a>
+    <a class="card" href="./puzzle_Batch%20Compress.pdf"><span class="title">Puzzle</span><span class="meta">puzzle.pdf</span></a>
+    <a class="card" href="./scribbles_Batch%20Compress.pdf"><span class="title">Scribbles</span><span class="meta">scribbles.pdf</span></a>
+  </div>
+</section>
+
+<footer>
+  <p>← <a href="/">sociable.systems</a> · Companion to the <a href="/newsletter/arcs/datadragons">DataDragons newsletter arc</a>. Also listed in the <a href="/artifacts/">preliminary archive</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>
