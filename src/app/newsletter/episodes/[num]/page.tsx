@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Page, PageHeader, StubNotice } from "@/components/Page";
 import { episodes, getEpisode } from "@/data/episodes";
 import { arcs } from "@/data/site";
+import { getArticle } from "@/lib/articles";
 
 export function generateStaticParams() {
   return episodes.map((e) => ({ num: String(e.num) }));
@@ -25,6 +26,7 @@ export default function EpisodePage({ params }: { params: { num: string } }) {
   const arc = episode.arcSlug ? arcs.find((a) => a.slug === episode.arcSlug) : null;
   const prev = getEpisode(num - 1);
   const next = getEpisode(num + 1);
+  const article = getArticle(num);
 
   return (
     <Page>
@@ -78,7 +80,18 @@ export default function EpisodePage({ params }: { params: { num: string } }) {
         </div>
       )}
 
-      <StubNotice what="Full episode body will populate here once the article importer runs against src/data/_incoming/articles/." />
+      {article ? (
+        <article
+          className="prose prose-ink max-w-none font-serif text-ink/90 leading-relaxed
+            prose-headings:font-serif prose-headings:text-ink
+            prose-a:text-ink prose-a:underline prose-a:underline-offset-4
+            prose-strong:text-ink prose-blockquote:border-l-steel/40 prose-blockquote:text-steel
+            prose-hr:border-ink/10"
+          dangerouslySetInnerHTML={{ __html: article.html }}
+        />
+      ) : (
+        <StubNotice what="Full episode body will populate here once the article importer runs against src/data/_incoming/articles/." />
+      )}
 
       <nav className="mt-16 pt-8 border-t border-ink/10 flex justify-between gap-4 text-sm">
         {prev ? (

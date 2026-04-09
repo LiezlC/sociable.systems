@@ -81,6 +81,8 @@ export const arcs: Arc[] = [
   { slug: "consciousness-loop", title: "The Consciousness Loop Cycle", blurb: "Molting into agency. The clamping problem. The covenant.", tier: "public", consolidationTier: "subscriber" },
   { slug: "the-loom", title: "The Loom Cycle", blurb: "Compute credits. Cut the bellwire. Pointers in the dark.", tier: "public", consolidationTier: "subscriber" },
   { slug: "ender", title: "The Ender Cycle", blurb: "Plausibility ceiling. No-confession workflow. After the sandbox breaks.", tier: "public", consolidationTier: "subscriber" },
+  { slug: "sideways", title: "The Sideways Cycle", blurb: "Format changes disclosure. Aperture, drift, and the wrapper as part of the machine.", tier: "public", consolidationTier: "subscriber" },
+  { slug: "contract", title: "The Contract Cycle", blurb: "Substrate funds solver. Goodhart drift, coherence, and the contract as the machine itself.", tier: "public", consolidationTier: "subscriber" },
 ];
 
 // ──────────────────────────────────────────────────────────────────

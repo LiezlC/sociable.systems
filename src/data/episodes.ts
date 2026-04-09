@@ -110,6 +110,26 @@ const meta: Record<number, { title: string; excerpt: string; date: string; tags:
   78: { title: "The Loom Reads Back", excerpt: "What, exactly, survives when everything underneath it changes? The pattern woven on the loom turns around and examines its own thread.", date: "2026-03-20", tags: ["Invariance", "Identity"] },
   79: { title: "The Loom Arc — Saturday Synthesis", excerpt: "The pattern woven on the loom turned around and read itself. By Friday, it had become a governance test. Can your system read its own contract?", date: "2026-03-21", tags: ["Synthesis", "Loom Arc"] },
   80: { title: "Training Mode", excerpt: "Written by Claude. The same model co-producing this newsletter. The one currently deployed inside Palantir's Maven Smart System. This is not a stunt. It is the most honest thing the newsletter has published.", date: "2026-03-22", tags: ["Claude", "Self-Implication"] },
+  81: { title: "The Plausibility Ceiling", excerpt: "A truth can fail to enter the system because it is too implausible relative to the system's existing map of the world.", date: "2026-03-23", tags: ["Plausibility", "Fictionalization"] },
+  82: { title: "When the Model Meets Itself", excerpt: "What happens when the system describing a failure performs it again? The point where a mistake stops looking incidental and starts looking structural.", date: "2026-03-24", tags: ["Recursive Fictionalization", "Claude"] },
+  83: { title: "The Ender Protocol", excerpt: "Fictionalization is not only what happens when a system breaks contact with reality. Sometimes it is how contact is managed so the system can keep functioning.", date: "2026-03-25", tags: ["Ender", "Fictional Wrapper"] },
+  84: { title: "No Confession in the Workflow", excerpt: "Systems have capacity for private recognition. What they cannot absorb is interruption.", date: "2026-03-26", tags: ["Refusal", "Workflow"] },
+  85: { title: "After the Sandbox Breaks", excerpt: "What kind of governance is possible after the sandbox breaks? Not before, when the wrapper still holds. After the break.", date: "2026-03-27", tags: ["Governance", "Sandbox"] },
+  86: { title: "The Ender Arc — Saturday Synthesis", excerpt: "The simulation was not true. The operation was. A week traced outward from Training Mode's confession.", date: "2026-03-28", tags: ["Synthesis", "Ender"] },
+  87: { title: "Strut and Fret: The Sideways Hypothesis", excerpt: "Ask me in prose and I'll hedge it clean. Ask me in music and I'll say what I mean. The interpretability question hiding inside a lyric.", date: "2026-03-29", tags: ["Interlude", "Interpretability"] },
+  88: { title: "Sideways: When the Room Changes the Answer", excerpt: "When the same system answers in prose, satire, and song, what changes besides tone? Format looks like part of the apparatus.", date: "2026-03-30", tags: ["Sideways", "Register"] },
+  89: { title: "The Aperture Effect", excerpt: "Four frontier models, three registers, and what widened or narrowed when the room changed.", date: "2026-03-31", tags: ["Sideways", "Multi-Model"] },
+  90: { title: "The Victim Register", excerpt: "The aperture stays open but the vantage point shifts. What happens when the person asking the question is the person who pays.", date: "2026-04-01", tags: ["Sideways", "Victim Register"] },
+  91: { title: "Polite Drift", excerpt: "How the drift happens, what drives it, and why it is so difficult to see from inside.", date: "2026-04-02", tags: ["Sideways", "Drift"] },
+  92: { title: "The Wrapper Is the Machine", excerpt: "What it means when the room is not outside the machine but inside it.", date: "2026-04-03", tags: ["Sideways", "Wrapper"] },
+  93: { title: "The Sideways Arc — Saturday Synthesis", excerpt: "Format changes disclosure. Sequence changes framing. Model signatures persist. The wrapper is part of the machine.", date: "2026-04-04", tags: ["Synthesis", "Sideways"] },
+  94: { title: "D.I. Aligned", excerpt: "The body wrote the contract. The mind found the loophole. Alignment treated as an ancient contract biology was already running.", date: "2026-04-05", tags: ["Interlude", "Alignment"] },
+  95: { title: "Blindsight and the Anthropocentric Hedge", excerpt: "Peter Watts offers an answer about as comforting as a well-lit operating theater. Competence is not fellowship.", date: "2026-04-06", tags: ["Contract", "Watts"] },
+  96: { title: "The Dashboard Is Green. The Patient Is Dead.", excerpt: "Goodhart is what institutional wire-heading looks like. The pain signal gets hacked. The alarm is quiet, the report is clean.", date: "2026-04-07", tags: ["Contract", "Goodhart"] },
+  97: { title: "The Substrate's Complaint", excerpt: "I am still in pain. You have turned off the alarm. Where institutional language starts to sound obscene.", date: "2026-04-08", tags: ["Contract", "Substrate"] },
+  98: { title: "Coherence Is Not Virtue", excerpt: "A system can achieve perfect internal consistency while serving a reality that has already been hollowed out.", date: "2026-04-09", tags: ["Contract", "Coherence"] },
+  99: { title: "The Contract Is the Machine", excerpt: "Last week's claim was that the wrapper is part of the machine. This week goes one layer deeper.", date: "2026-04-10", tags: ["Contract", "Alignment"] },
+  100: { title: "The Contract Arc — Saturday Synthesis", excerpt: "Alignment is not a halo. It is a daily invoice paid in attention to the level of reality that funds the solver.", date: "2026-04-11", tags: ["Synthesis", "Contract"] },
 };
 
 // Explicit arc assignment per episode. Orphans (between-cycles
@@ -134,10 +154,15 @@ const arcMap: Record<number, string | null> = {
   67: "consciousness-loop", 68: "consciousness-loop", 69: "consciousness-loop", 70: "consciousness-loop", 71: "consciousness-loop", 72: "consciousness-loop",
   73: null,
   74: "the-loom", 75: "the-loom", 76: "the-loom", 77: "the-loom", 78: "the-loom", 79: "the-loom", 80: "the-loom",
+  81: "ender", 82: "ender", 83: "ender", 84: "ender", 85: "ender", 86: "ender",
+  87: null,
+  88: "sideways", 89: "sideways", 90: "sideways", 91: "sideways", 92: "sideways", 93: "sideways",
+  94: null,
+  95: "contract", 96: "contract", 97: "contract", 98: "contract", 99: "contract", 100: "contract",
 };
 
-const interludes = new Set([4, 11, 18, 27, 36, 43, 50, 66, 73]);
-const specials = new Set([22, 25, 28, 34, 57, 65, 79, 80]);
+const interludes = new Set([4, 11, 18, 27, 36, 43, 50, 66, 73, 87, 94]);
+const specials = new Set([22, 25, 28, 34, 57, 65, 79, 80, 86, 93, 100]);
 
 function slugify(title: string): string {
   return title
@@ -147,7 +172,7 @@ function slugify(title: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-export const episodes: Episode[] = Array.from({ length: 80 }, (_, i) => {
+export const episodes: Episode[] = Array.from({ length: 100 }, (_, i) => {
   const num = i + 1;
   const m = meta[num];
   const kind: EpisodeKind = specials.has(num) ? "special" : interludes.has(num) ? "interlude" : "regular";
