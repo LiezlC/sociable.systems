@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Page, PageHeader, CardGrid, Card } from "@/components/Page";
 import { curriculumTracks, modules } from "@/data/site";
 
@@ -29,12 +30,20 @@ export default function CurriculumHome() {
         ))}
       </CardGrid>
 
-      <h2 className="font-serif text-2xl mt-16 mb-4">Artifacts & Resources</h2>
-      <ul className="space-y-2 text-sm">
-        <li><a href="/curriculum/si_me_modules.html" target="_blank" rel="noopener" className="underline underline-offset-4">Social Impact & M&E — module outline</a> <span className="font-mono text-xs text-steel">[HTML]</span></li>
-        <li><a href="/curriculum/isas-infog.html" target="_blank" rel="noopener" className="underline underline-offset-4">Industrial Safety Architecture for Systems — infographic</a> <span className="font-mono text-xs text-steel">[HTML]</span></li>
-        <li><a href="/InfographicTheGlobalAIGovernanceDivide.html" target="_blank" rel="noopener" className="underline underline-offset-4">The Global AI Governance Divide — infographic</a> <span className="font-mono text-xs text-steel">[HTML]</span></li>
-      </ul>
+      <h2 className="font-serif text-2xl mt-16 mb-4">Artifacts &amp; Resources</h2>
+      <p className="text-steel mb-6 max-w-3xl">
+        Syllabi, training levels (0 &rarr; 6), partnership engines, reference docs, and infographics &mdash; 30+ artifacts, all navigable within the site.
+      </p>
+      <CardGrid>
+        <Card href="/curriculum/artifacts#syllabus" title="Syllabus & Overviews" blurb="Complete curriculum overviews, artifact indexes, and the facilitator deployment matrix." />
+        <Card href="/curriculum/artifacts#level" title="Training Levels (0 → 6)" blurb="Progressive training from Constitutional Foundations through Forensic Domains." />
+        <Card href="/curriculum/artifacts#infographic" title="Infographics & Visuals" blurb="SI/M&E, ISAS architecture, governance divide, ESG landscape." />
+      </CardGrid>
+      <div className="mt-4">
+        <Link href="/curriculum/artifacts" className="text-sm text-teal hover:text-teal-dark font-medium">
+          Browse all 30+ artifacts &rarr;
+        </Link>
+      </div>
 
       <h2 className="font-serif text-2xl mt-16 mb-4">Curriculum cards</h2>
       <p className="text-steel mb-6 max-w-3xl text-sm">Visual summaries of the Liability Sponge sequence — useful as slide inserts for procurement conversations.</p>
