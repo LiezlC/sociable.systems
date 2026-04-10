@@ -41,7 +41,7 @@ export function Card({
   return (
     <Link
       href={href}
-      className="block border border-ink/10 hover:border-ink/40 p-5 rounded-sm transition-colors no-underline"
+      className="block border border-ink/10 hover:border-teal/50 p-5 rounded-sm transition-colors no-underline"
     >
       <div className="font-serif text-lg leading-snug">{title}</div>
       {blurb && <p className="mt-2 text-sm text-steel">{blurb}</p>}

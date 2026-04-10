@@ -33,7 +33,7 @@ export default function GrieVoiceHub() {
             <Link
               key={p.slug}
               href={`/the-watchdog/grievoice/${p.slug}`}
-              className="block border border-ink/10 hover:border-ink/40 p-5 rounded-sm transition-colors no-underline"
+              className="block border border-ink/10 hover:border-teal/50 p-5 rounded-sm transition-colors no-underline"
             >
               <div className="font-serif text-lg leading-snug">{p.title}</div>
               <p className="mt-2 text-sm text-steel">{p.description}</p>
@@ -56,7 +56,7 @@ export default function GrieVoiceHub() {
               href={d.href}
               target="_blank"
               rel="noopener"
-              className="block border border-ink/10 hover:border-ink/40 p-5 rounded-sm transition-colors no-underline"
+              className="block border border-ink/10 hover:border-teal/50 p-5 rounded-sm transition-colors no-underline"
             >
               <div className="font-serif text-lg leading-snug">
                 {d.title}
@@ -75,7 +75,7 @@ export default function GrieVoiceHub() {
           href="https://humevoice-virid.vercel.app/"
           target="_blank"
           rel="noopener"
-          className="inline-block border border-ink/10 hover:border-ink/40 px-6 py-3 rounded-sm transition-colors font-serif no-underline"
+          className="inline-block border border-teal/30 hover:border-teal bg-teal/5 hover:bg-teal/10 px-6 py-3 rounded-sm transition-colors font-serif no-underline"
         >
           Try the Live Voice Agent &rarr;
         </a>

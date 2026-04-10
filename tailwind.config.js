@@ -4,10 +4,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#0d0d0f",
-        paper: "#fafaf7",
-        rust: "#a4361c",
-        steel: "#3a4754",
+        // Deep teal-charcoal — body text, headings, dominant dark
+        ink: "#1a2f38",
+        // Warm cream — page background
+        paper: "#f8f6f1",
+        // Brown-orange accent — eyebrows, small highlights, tier badges
+        rust: "#a84b2f",
+        // Warm brown — secondary text, captions, muted UI
+        steel: "#5e5240",
+        // Brand teal — links, buttons, interactive elements
+        teal: {
+          DEFAULT: "#2d7a6d",
+          light: "#5fb3a1",
+          dark: "#13343b",
+        },
       },
       fontFamily: {
         sans: ["ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica", "Arial", "sans-serif"],

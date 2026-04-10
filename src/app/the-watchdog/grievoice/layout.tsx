@@ -16,15 +16,15 @@ export default function GrieVoiceLayout({ children }: { children: React.ReactNod
       </nav>
 
       {/* Section sub-nav */}
-      <div className="mb-8 flex flex-wrap gap-x-4 gap-y-2 text-sm border-b border-ink/10 pb-4">
-        <Link href="/the-watchdog/grievoice" className="text-steel hover:text-ink font-medium">
+      <div className="mb-8 flex flex-wrap gap-x-4 gap-y-2 text-sm border-b border-teal/20 pb-4">
+        <Link href="/the-watchdog/grievoice" className="text-teal font-medium hover:text-teal-dark">
           Hub
         </Link>
         {grievoicePages.map((p) => (
           <Link
             key={p.slug}
             href={`/the-watchdog/grievoice/${p.slug}`}
-            className="text-steel hover:text-ink"
+            className="text-steel hover:text-teal"
           >
             {p.title}
           </Link>

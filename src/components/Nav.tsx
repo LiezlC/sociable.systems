@@ -10,7 +10,7 @@ export function Nav() {
         </Link>
         <nav className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
           {topNav.map((item) => (
-            <Link key={item.href} href={item.href} className="text-steel hover:text-ink">
+            <Link key={item.href} href={item.href} className="text-steel hover:text-teal">
               {item.label}
             </Link>
           ))}
