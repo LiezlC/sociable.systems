@@ -4,7 +4,10 @@ import { Page, PageHeader } from "@/components/Page";
 import { watchdogProducts } from "@/data/site";
 
 export function generateStaticParams() {
-  return watchdogProducts.map((p) => ({ product: p.slug }));
+  // grievoice has its own dedicated route at /the-watchdog/grievoice/
+  return watchdogProducts
+    .filter((p) => p.slug !== "grievoice")
+    .map((p) => ({ product: p.slug }));
 }
 
 export function generateMetadata({ params }: { params: { product: string } }) {
@@ -18,18 +21,7 @@ type ProductExtras = {
 };
 
 const extras: Record<string, ProductExtras> = {
-  grievoice: {
-    long:
-      "Multilingual voice agents for grievance systems. Current demo is worker-context. Next: community voice, supplier voice, and other beyond-labor applications. GrieVoice is the flagship instance of the Grievance Watchdog Architecture — voice-capture as the sensing layer that triggers the constitutional brake.",
-    resources: [
-      { title: "GrieVoice — index", href: "/watchdog/grievoice/index.html", kind: "HTML" },
-      { title: "GrieVoice agent (demo frontpage)", href: "/watchdog/grievoice/grievoice-agent.html", kind: "HTML" },
-      { title: "GrieVoice architecture", href: "/watchdog/grievoice/grievoice-architecture.html", kind: "HTML" },
-      { title: "GrieVoice comprehensive deck", href: "/watchdog/grievoice/grievoice-comprehensive-deck.html", kind: "HTML" },
-      { title: "WhatsApp integration spec", href: "/watchdog/grievoice/whatsapp-integration-spec.html", kind: "HTML" },
-      { title: "USSD integration spec", href: "/watchdog/grievoice/ussd-integration-spec.html", kind: "HTML" },
-    ],
-  },
+  // grievoice has its own dedicated section at /the-watchdog/grievoice/
   "counter-narrative-dashboard": {
     long:
       "A monitoring-side counterpart to GrieVoice's voice-capture side: tracks real-world outcomes against the safety-theater claims. What is actually happening vs what the dashboards say is happening.",
