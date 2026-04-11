@@ -55,9 +55,15 @@ export default function ArcPage({ params }: { params: { arc: string } }) {
           <ul className="space-y-2">
             {resources.map((r) => (
               <li key={r.href}>
-                <a href={r.href} className="underline underline-offset-4" target="_blank" rel="noopener">
-                  {r.title}
-                </a>
+                {r.kind === "PDF" ? (
+                  <a href={r.href} className="underline underline-offset-4" target="_blank" rel="noopener">
+                    {r.title}
+                  </a>
+                ) : (
+                  <Link href={r.href} className="underline underline-offset-4">
+                    {r.title}
+                  </Link>
+                )}
                 <span className="ml-2 font-mono text-xs text-steel">[{r.kind}]</span>
               </li>
             ))}
